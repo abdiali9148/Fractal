@@ -1,0 +1,13 @@
+# Phoenix Fractal - Peacock tail
+
+type: phoenix
+preal: -0.5
+pimag: 0.0
+# c value taken from http://usefuljs.net/fractals/docs/julia_mandelbrot.html, "Connected and Unconnected Sets"
+creal: 0.5667
+cimag: 0.0
+centerY: -0.363287878200906
+centerX: 0.381197981824009
+axisLength: 0.0840187115019564
+pixels: 512
+iterations: 101

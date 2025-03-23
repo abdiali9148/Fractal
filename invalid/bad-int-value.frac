@@ -1,0 +1,11 @@
+type: phoenix
+creal: .26
+cimag: .0015
+# The CenterX property does not have an integer value
+centerx: zero
+centery: 0
+axislength: 2.17
+pixels: 512
+iterations: 64
+pimag: 0
+preal: -0.5

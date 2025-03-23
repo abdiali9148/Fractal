@@ -1,0 +1,8 @@
+# Another zoom-in on the spider fractal
+# You'll need to implement this formula yourself so your program can produce this image
+type: spider
+pixels: 640
+iterations: 200
+axisLength: 0.009541275
+centerX: -0.1354762
+centerY: -0.6104258

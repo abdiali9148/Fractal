@@ -1,0 +1,8 @@
+# A branching spiral, rendered to 1024 iterations
+# About as good as it gets - more iterations at this scale aren't worth the time
+type: mandelbrot
+pixels: 640
+iterations: 1024
+centerx: 0.354957789387306
+centery: -0.338644137198173
+axislength: 5.05822370716613e-06

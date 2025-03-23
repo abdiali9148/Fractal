@@ -1,0 +1,10 @@
+type: Phoenix
+creal: .26
+cimag: .0015
+centerx: 0
+centery: 0
+
+# axislength should be a positive number
+axislength: 0.0
+pixels: 512
+iterations: 64

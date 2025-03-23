@@ -1,0 +1,24 @@
+# Show Your Work log files
+*showyourwork*
+_showyourwork.sqlite
+
+# Common IDE configuration files
+.idea
+.vscode
+*.sw[pon]
+*~
+
+# Virtual environments
+.venv
+venv
+
+# Python cache files
+*.pyc
+__pycache__
+
+# Other files to ignore for good practice
+*.bak
+*.csv
+*.png
+*.zip
+.DS_Store

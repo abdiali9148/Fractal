@@ -1,0 +1,11 @@
+type: mandelbrot
+creal: .26
+preal: .26
+cimag: .0015
+pimag: .0015
+centerx: 0
+# The CenterY property is commented out
+# centery: 0
+axislength: 2.17
+pixels: 512
+iterations: 64

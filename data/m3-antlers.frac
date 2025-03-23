@@ -1,0 +1,8 @@
+# Antlers in the Mandelbrot^3 set
+# You'll need to implement this formula yourself to make your program produce this image
+type: Mandelbrot3
+pixels: 640
+centerx: 0.651324
+centery: 0.5112312
+axislength: 0.122301
+iterations: 128

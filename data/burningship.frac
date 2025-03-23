@@ -1,0 +1,8 @@
+# A basic Burning Ship fractal
+# You'll need to implement this formula yourself to make your program produce this image
+Type: Burningship
+centerX: 0
+centerY: 0
+axisLength: 3.7
+pixels: 768
+iterations: 96

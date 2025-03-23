@@ -1,0 +1,17 @@
+# Phoenix Fractal - A big European dragon composed of smaller Oriental dragons
+
+type: phoenix
+# c value taken from http://usefuljs.net/fractals/docs/julia_mandelbrot.html, "Connected and Unconnected Sets"
+creal: 0.57
+cimag: 0.0
+
+preal: -0.486
+pimag: 0.0
+pixels: 1024
+
+iterations: 128
+
+centerY: -0.611292072047808
+centerX: -0.0428352613957943
+
+axisLength: 0.0097572606582521

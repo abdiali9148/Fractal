@@ -1,0 +1,12 @@
+# Towers growing out of the top of the ship
+# If you design a color palette that uses blues and reds cleverly, it will look
+# like a ship caught in a raging inferno.
+#
+# (The apperance of this fractal improves when you flip it vertically in an image editor)
+# You'll need to implement this formula yourself so your program can produce this image
+Type: Burningship
+Pixels: 640
+Iterations: 128
+CenterX: -1.7472
+CenterY: -0.037233
+AxisLength: 0.11038

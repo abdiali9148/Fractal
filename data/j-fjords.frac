@@ -1,0 +1,16 @@
+# Maybe it's the shoreline of some fjords?
+
+# You'll need to implement this formula yourself so your program can produce this image
+
+# Found in http://bl.ocks.org/syntagmatic/raw/3736720/ with these parameters
+#
+# Their rendering algorithm outputs this image upside-down relative to ours
+
+type: julia
+cReal: -1.0125
+cImag: 0.275
+pixels: 512
+centerx: -0.339230468501458
+centery: 0.417970758224314
+axislength: 0.164938488846612
+iterations: 48

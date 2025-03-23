@@ -1,0 +1,8 @@
+# The characteristic Mandelbrot shape embedded within an 8-pointed compass
+type: Mandelbrot
+
+centerY: -0.0
+centerX: -1.999774061505
+axisLength: 0.000000361314
+iterations: 350
+pixels: 1024

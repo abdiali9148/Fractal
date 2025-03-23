@@ -1,0 +1,11 @@
+type: Manderbrot
+creal: .26
+# The property name 'CenterX' is missing
+: 0
+centery: 0
+axislength: 2.17
+pixels: 512
+iterations: 64
+preal: 2.128
+pimag: 0.0
+cimag: 0.0

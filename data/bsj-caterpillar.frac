@@ -1,0 +1,10 @@
+# Zoom on the central spur on the left side of the Burning Ship Julia
+# You'll need to implement this formula yourself to make your program produce this image
+Type:       Burningshipjulia
+Creal:      -.598
+Cimag:      .9225
+CenterX:    -0.69
+Centery:    0
+Axislength: .16
+Pixels:     768
+Iterations: 178

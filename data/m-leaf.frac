@@ -1,0 +1,7 @@
+# Veins on a leaf.  I found this one in GNU XaoS.
+type: mandelbrot
+pixels: 640
+centerx:     -1.543577002
+centery:     -0.000058690069
+axislength:  0.000051248888
+iterations: 96

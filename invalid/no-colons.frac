@@ -1,0 +1,8 @@
+# this line is missing its colon
+iterations 64
+
+type: MANDELBROT
+centerx: 0
+centery: 0
+axislength: 2.17
+pixels: 512

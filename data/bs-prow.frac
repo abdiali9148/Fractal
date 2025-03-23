@@ -1,0 +1,8 @@
+# Front section of the Burning Ship fractal
+# You'll need to implement this formula yourself so your program can produce this image
+type: burningship
+pixels: 512
+axislength: 1.1910
+iterations: 128
+centery: -0.125
+centerx: -1.37

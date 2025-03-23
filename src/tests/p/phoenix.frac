@@ -1,0 +1,13 @@
+# Phoenix Fractal by Brock
+
+type: phoenix
+# P and C values taken from http://usefuljs.net/fractals/docs/mandelvariants.html, "Variations on the Mandelbrot Set Formula"
+preal: -0.5
+pimag: 0.0
+creal: 0.5667
+cimag: 0.0
+centerx: 0
+centery: 0
+axislength: 3.25
+pixels: 512
+iterations: 101

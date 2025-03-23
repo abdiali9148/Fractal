@@ -1,0 +1,7 @@
+# "Mandelbrot" is misspelled - this should result in NotImplementedError
+type: Manderblot
+pixels:     640
+centerx:    0.3015
+centery:    -0.0200
+axislength: 0.03
+iterations: 100

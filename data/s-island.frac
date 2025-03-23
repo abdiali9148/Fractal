@@ -1,0 +1,8 @@
+# Spider island
+# You'll need to implement this formula yourself so your program can produce this image
+Type: Spider
+Pixels: 1024
+Centerx: 0.018
+Centery: 0.700
+Axislength: 0.25
+Iterations: 256

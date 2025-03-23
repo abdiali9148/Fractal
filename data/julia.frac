@@ -1,0 +1,10 @@
+# The full Julia set in all its glory
+# You'll need to implement this formula yourself so your program can produce this image
+type: julia
+creal: -1.0125
+cimag: 0.275
+pixels: 1024
+centerx: 0.0
+centery: 0.0
+axislength: 4.0
+iterations: 78

@@ -1,0 +1,8 @@
+# Basic Spider set, fully zoomed out
+# You'll need to implement this formula yourself so your program can produce this image
+Type: spider
+Pixels: 640
+Centerx: -1.0
+Centery: 0.0
+Axislength: 4.0
+Iterations: 100

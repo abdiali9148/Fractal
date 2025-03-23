@@ -1,0 +1,7 @@
+# this line has too many colons
+iterations: 64 : 2
+type: mandelbrot
+centerx: 0
+centery: 0
+axislength: 2.17
+pixels: 512

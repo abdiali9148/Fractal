@@ -1,0 +1,12 @@
+# A connected Julia set fractal
+# You'll need to implement this formula yourself so your program can produce this image
+type: julia
+creal: .26
+cimag: .0016
+centerx: 0
+centery: 0
+axislength: 2.17
+pixels: 512
+iterations: 64
+
+# See also unconnected.frac

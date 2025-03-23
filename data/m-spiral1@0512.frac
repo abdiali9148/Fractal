@@ -1,0 +1,7 @@
+# spiral1 from the original starter code, but rendered to 512 iterations
+iterations: 512
+type: mandelbrot
+pixels: 640
+centerx: -0.747
+centery: 0.1075
+axislength: 0.002

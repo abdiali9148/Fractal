@@ -1,0 +1,11 @@
+# Basic Newton fractal, fully zoomed out
+# You'll need to implement this formula yourself so your program can produce this image
+
+AxisLength: 4.0
+iterations: 100
+
+Type: Newton
+pixels: 640
+
+centerx: 0.0
+CenterY: 0.0

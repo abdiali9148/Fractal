@@ -1,0 +1,9 @@
+# Basic mandelbrot set, fully zoomed out
+type: mandelbrot
+pixels: 640
+axislength: 2.55
+
+iterations: 96
+
+centerx: -0.7
+centery: 0.0

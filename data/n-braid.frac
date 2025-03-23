@@ -1,0 +1,10 @@
+# A braid within the Newton set
+# You'll need to implement this formula yourself so your program can produce this image
+type: newton
+pixels: 1080
+
+axisLength: 0.232
+centerX: -0.398
+iterations: 200
+
+centerY: 0.195

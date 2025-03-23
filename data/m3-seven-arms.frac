@@ -1,0 +1,10 @@
+# Seven-armed spiral in the Mandelbrot^3 fractal
+# You'll need to implement this formula yourself to make your program produce this image
+type: mandelbrot3
+pixels: 640
+
+centerx: -0.2786
+centery: -0.74285
+
+axislength: 0.016
+iterations: 128

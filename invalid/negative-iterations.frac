@@ -1,0 +1,9 @@
+type: mandelbrot
+creal: .26
+cimag: .0015
+centerx: 0
+centery: 0
+axislength: 1.0
+pixels: 256
+# iterations should be positive
+iterations: -64

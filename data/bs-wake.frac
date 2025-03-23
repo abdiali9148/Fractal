@@ -1,0 +1,8 @@
+# A miniature Burning Ship shape found by zooming in on the frothy wake of the larger ship
+# You'll need to implement this formula yourself so your program can produce this image
+Type: burningship
+pixels: 512
+iterations: 144
+axislength: 0.062
+centery: -1.527
+centerx: 0.875

@@ -1,0 +1,12 @@
+# Curls made of curls in the Mandelbrot^4 fractal
+# You'll need to implement this formula yourself to make your program produce this image
+
+type: mandelbrot4
+pixels: 640
+
+iterations: 384
+
+centerX: -0.24756781
+centerY: 0.46511148
+
+axisLength: 0.000600098

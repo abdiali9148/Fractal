@@ -1,0 +1,13 @@
+type: phoenix
+creal: .26
+cimag: .0015
+centerx: 0
+centery: 0
+
+axislength: 2.17
+# Despite the fact that the axislen property has already been defined,
+# this is an invalid value, and should result in an RuntimeError
+axislength: two point seventeen
+
+pixels: 512
+iterations: 64

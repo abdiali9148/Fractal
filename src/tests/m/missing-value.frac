@@ -1,0 +1,11 @@
+type: mandelbrot
+creal: .26
+cimag: .0015
+
+# The CenterX property does not have a value
+centerx:
+centery: 0
+
+axislength: 2.17
+pixels: 512
+iterations: 64

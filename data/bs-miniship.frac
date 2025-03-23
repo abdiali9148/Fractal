@@ -1,0 +1,8 @@
+# A miniature Burning Ship shape found at the tip of the overall fractal
+# You'll need to implement this formula yourself so your program can produce this image
+Iterations: 124
+Pixels: 768
+AxisLength: 0.210
+Centery: -0.025
+CenterX: -1.77
+Type: Burningship

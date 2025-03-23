@@ -1,0 +1,12 @@
+# Swirls deep in the Mandelbrot^4 fractal
+# You'll need to implement this formula yourself to make your program produce this image
+
+Type: Mandelbrot4
+
+CenterX: 0.3491936
+CenterY: -0.7073472
+
+Pixels: 640
+
+Iterations: 384
+AxisLength: 0.001259061
