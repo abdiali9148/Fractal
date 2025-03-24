@@ -21,25 +21,30 @@
 #                                 naturally sentient (or close enough).
 
 
+import os.path
 import unittest
+
 from phoenix_fractal import getColorFromPalette, grad, WHITE, f, p
 from phoenix_fractal import getFractalConfigurationDataFromFractalRepositoryDictionary
 
 
 class TestPhoenix(unittest.TestCase):
     def setUp(self):
-        fractal_name, self.fractal = p("tests/p/phoenix.frac")
+        self.here = os.path.dirname(__file__)
+        fractal_name, self.fractal = p(f"{self.here}/p/phoenix.frac")
 
     def test_p(self):
         """Fractal configuration file parser behaves correctly"""
-        self.assertRaises(RuntimeError, p, "tests/p/commented-out-property.frac")
-        self.assertRaises(ValueError, p, "tests/p/bad-float-value.frac")
-        self.assertRaises(RuntimeError, p, "tests/p/no-property-name.frac")
-        self.assertRaises(ValueError, p, "tests/p/bad-int-value.frac")
-        self.assertRaises(ValueError, p, "tests/p/zero-axislen.frac")
-        self.assertRaises(ValueError, p, "tests/p/missing-value.frac")
-        self.assertIsNotNone(p("tests/p/phoenix.frac"))
-        self.assertRaises(ValueError, p, "tests/p/negative-axislen.frac")
+        self.assertRaises(RuntimeError, p, f"{self.here}/p/commented-out-property.frac")
+        self.assertRaises(ValueError, p, f"{self.here}/p/bad-float-value.frac")
+        self.assertRaises(RuntimeError, p, f"{self.here}/p/no-property-name.frac")
+        self.assertRaises(ValueError, p, f"{self.here}/p/bad-int-value.frac")
+        self.assertRaises(ValueError, p, f"{self.here}/p/zero-axislen.frac")
+        self.assertRaises(ValueError, p, f"{self.here}/p/missing-value.frac")
+        self.assertRaises(RuntimeError, p, f"{self.here}/p/too-many-colons.frac")
+        self.assertIsNotNone(p(f"{self.here}/p/phoenix.frac"))
+        self.assertRaises(ValueError, p, f"{self.here}/p/negative-axislen.frac")
+        self.assertRaises(RuntimeError, p, f"{self.here}/p/no-colons.frac")
 
     def test_getColorFromPalette(self):
         """Phoenix fractal configuration and algorithm output the expected colors at key locations"""

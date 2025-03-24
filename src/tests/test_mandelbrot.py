@@ -22,6 +22,7 @@
 
 
 import unittest
+import os.path
 
 from mbrot_fractal import PixelColorOrIndex
 from mbrot_fractal import *
@@ -31,6 +32,9 @@ import mbrot_fractal
 
 
 class TestMandelbrot(unittest.TestCase):
+    def setUp(self):
+        self.here = os.path.dirname(__file__)
+
     def test_pixelColorOrIndex(self):
         """Mandelbrot fractal configuration and algorithm output the expected colors at key locations"""
         # test the pixel color...
@@ -60,13 +64,16 @@ class TestMandelbrot(unittest.TestCase):
 
     def test_castMbrotDataFileToHashMap(self):
         """Fractal configuration file parser behaves correctly"""
-        self.assertRaises(ValueError, mbrot_fractal.castMbrotDataFileToHashMap, "tests/m/zero-axislen.frac")
-        self.assertRaises(ValueError, mbrot_fractal.castMbrotDataFileToHashMap, "tests/m/bad-float-value.frac")
-        self.assertRaises(RuntimeError, mbrot_fractal.castMbrotDataFileToHashMap, "tests/m/no-colons.frac")
-        self.assertIsNotNone(mbrot_fractal.castMbrotDataFileToHashMap("tests/m/mandelbrot.frac"))
-        self.assertRaises(ValueError, mbrot_fractal.castMbrotDataFileToHashMap, "tests/m/bad-int-value.frac")
-        self.assertRaises(ValueError, mbrot_fractal.castMbrotDataFileToHashMap, "tests/m/negative-axislen.frac")
-        self.assertRaises(RuntimeError, mbrot_fractal.castMbrotDataFileToHashMap, "tests/m/too-many-colons.frac")
+        self.assertRaises(ValueError, mbrot_fractal.castMbrotDataFileToHashMap, f"{self.here}/m/zero-axislen.frac")
+        self.assertRaises(ValueError, mbrot_fractal.castMbrotDataFileToHashMap, f"{self.here}/m/bad-float-value.frac")
+        self.assertRaises(RuntimeError, mbrot_fractal.castMbrotDataFileToHashMap, f"{self.here}/m/no-colons.frac")
+        self.assertIsNotNone(mbrot_fractal.castMbrotDataFileToHashMap(f"{self.here}/m/mandelbrot.frac"))
+        self.assertRaises(ValueError, mbrot_fractal.castMbrotDataFileToHashMap, f"{self.here}/m/bad-int-value.frac")
+        self.assertRaises(ValueError, mbrot_fractal.castMbrotDataFileToHashMap, f"{self.here}/m/negative-axislen.frac")
+        self.assertRaises(RuntimeError, mbrot_fractal.castMbrotDataFileToHashMap, f"{self.here}/m/too-many-colons.frac")
+        self.assertRaises(ValueError, mbrot_fractal.castMbrotDataFileToHashMap, f"{self.here}/m/missing-value.frac")
+        self.assertRaises(RuntimeError, mbrot_fractal.castMbrotDataFileToHashMap, f"{self.here}/m/commented-out-property.frac")
+        self.assertRaises(RuntimeError, mbrot_fractal.castMbrotDataFileToHashMap, f"{self.here}/m/no-property-name.frac")
 
     def test_paletteLength(self):
         """Palette contains the expected number of colors"""

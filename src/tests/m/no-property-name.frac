@@ -1,4 +1,4 @@
-type: Manderbrot
+type: Mandelbrot
 creal: .26
 # The property name 'CenterX' is missing
 : 0

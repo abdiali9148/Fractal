@@ -74,9 +74,9 @@ The [Project 4.0 Requirements](./instructions/4.0-Project_Requirements.md#user-i
 
 The starter code contains 8 **non-trivial** test cases, all of which pass (the 15 tests in `src/tests/test_assertions.py` don't count; they are merely examples).
 
+*   The unit tests are scripts in the directory `src/tests`.
 *   You may run the unit tests through PyCharm or the shell.
-*   The unit tests are files in the directory `src/tests`
-*   To run the tests from your shell, first `cd src`, then run `python run_tests.py`.
+    *   We will run the tests from a shell when we grade your submission.  You should make sure they work this way, too!
 *   Full instructions are found in [Running Unit Tests](./instructions/4.0-Running_Unit_Tests.md).
 
 
