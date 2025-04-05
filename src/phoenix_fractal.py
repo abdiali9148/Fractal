@@ -184,7 +184,7 @@ def cast_hash_map(fname):
         if pair[0] == 'cimag':
             frac_cimag = float(pair[1])
 
-
+#
     f.close()
 
     if None in (frac_centerx, frac_centery, frac_axislength, frac_type):
