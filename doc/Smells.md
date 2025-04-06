@@ -24,91 +24,64 @@ For each code smell found in the starter code:
 If you find a code smell that is not on this list, please add it to your report.
 
 0.  **Magic** numbers
-    *   These are literal values used in critical places without any context or meaning
-    *   "Does the `256` right here have anything to do with the `256` over there?"
+    0.  Smell at `mbrot_fractal.py` [line 241]
+    *   [512 is not supposed to be there]
+    *   [Code Snippet between triple-backquotes ```i = PhotoImage(width=512, height=512)```]
+    *   [512 is supposed to be window size. so just put SIZE in there and declare SIZE as 512]
 1.  **Global** variables
-    *   Used to avoid passing a parameter into a function
-    *   Used to return an extra value from a function
-    *   There are better ways to meet both of these needs!
-    *   *Note, this does not apply to global `CONSTANTS`!*
+    1.  Smell at `phoenix_fractal.py` [line 72 ~ 73]
+    *   [useless global variables when they are already called in their own module.]
+    *   [Code Snippet between triple-backquotes ```global win ~ global grad```]
+    *   [just delete them both and put window in the parameter]
 2.  **Poorly-named** identifiers
-    *   Variable names should strike a good balance between brevity and descriptiveness
-    *   Short variable names are okay in some situations:
-        *   `i` or `j` as a counter in a brief `for` loop
-        *   Variables from well-known math formulae should match the textbook (i.e. `a`, `b` and `c` are familiar in a quadratic or Pythagorean formula)
-        *   Otherwise, short names should be avoided
-    *   Variables with really, really long names make code harder to read
-    *   Variables that override or "shadow" other identifiers
-        *   Builtin Python functions such as `input`, `len`, `list`, `max`, `min` and `sum` are especially susceptible to this
+    2. Smell at `phoenix_fractal.py` [line 72 ~ 73]
+    *   [useless global variables when they are already called in their own module.]
+    *   [Code Snippet between triple-backquotes ```global win ~ global grad```]
+    *   [just delete them both and put window in the parameter]
 3.  **Bad** Comments
-    *   Comments are condiments for code; a small amount can enhance a meal, but too much ruins it
-    *   Strive to write clear, self-documenting code that speaks for itself; when a line needs an explanatory comment to be understood, it indicates that identifier names were poorly chosen
-    *   Delete obsolete remarks that no longer accurately describe the situation
-    *   The same goes for blocks of commented-out code that serve no purpose and clutter up the file
-    *   Programmers sometimes vent their frustration with snarky or vulgar comments; these add no value, are unprofessional and embarrassing, and only serve to demoralize maintainers
-4.  **Too many** arguments
-    *   Seen when more than a handful of parameters are passed to a function/method
-    *   Parameters that are passed in but never used
-5.  Function/Method that is **too long**
-    *   Too many lines of code typically happens because the function/method has too many different responsibilities
-    *   Generally, a method longer than a dozen lines should make you ask yourself these questions
-        *   "Does one function really need to do all of this work?"
-        *   "Could I split this into smaller, more focused pieces?"
-6.  **Redundant** code
-    *   A repeated statement which doesn't have an effect the second time
-    *   Ask yourself whether it makes any difference to be run more than once
-    *   ```python
-        i = 7
-        print(i)
-        i = 7
-        ```
-7.  Decision tree that is **too complex**
-    *   Too long or deeply nested trees of `if/elif/else`
-    *   Are all of the branches truly necessary?
-    *   Can all branches even be reached?
-    *   Has every branch been tested?
-8.  **Spaghetti** code
-    *   Heaps of meandering code without a clear goal
-    *   Functions/objects used in inconsistent ways
-    *   Many variables are used to keep track of
-    *   Conditional statements with long, confusing Boolean expressions
-    *   Boolean expressions expressing double negatives; ex. `if not undone: ...`
-    *   Code that makes you say "It would be easier to rewrite this than to understand it"
-9.  **Dead** code
-    *   Modules that are imported but not used
-    *   Variables that are declared but not used
-    *   Lines that are *never* run because they are placed in an impossible-to-reach location
-        *   Code that appears after a `return` statement
-            *   ```python
-                return value
-                value += 1
-                ```
-        *   Blocks of code guarded by an impossible-to-satisfy logical test
-            *   ```python
-                two_bee = True
-                if two_bee and not two_bee:
-                    print("If can you see this message, it is time to get a new CPU")
-                ```
-            *   ```python
-                counter = 100
-                while counter < 0:
-                    print(f"T minus {counter}...")
-                    counter -= 1
-                ```
-    *   Functions that are defined but never called *may* or *may not* be dead code
-        *   In **Code Libraries** it is normal to define functions that are not meant to be used in the library itself
-            *   It is okay to keep these functions
-        *   As an **Application** evolves, calls to some of its functions may be removed until only the function's definition remains
-            *   Some programmers may keep these functions "just in case" they are needed again
-            *   We don't do this at DuckieCorp because we have Git; if we ever need to recover that function, we can find it in the repo's history
-
-
-### Template
-
-0.  Smell at `file` [lines xx-yy or general location]
-    *   [Brief description of smell]
+ Smell at `phoenix_fractal.py` [lines 76]
+    *   [the comment talks nothing about the code. only something found on the internet.]
     *   [Code Snippet between triple-backquotes `` ``` ``]
-    *   [How to resolve]
+    *   [remove]
+4.  **Too many** arguments
+Smell at `phoenix_fractal.py` [lines 131]
+    *   [function has way too many arguments and they are all one letter.]
+    *   [```def makePictureOfFractal(f, i, e, w, g, p, W, a, b, s):```]
+    *   ['fractal, window, img' is needed]
+5.  Function/Method that is **too long**
+Smell at `phoenix_fractal.py` [lines 131]
+    *   [function is too long]
+    *   [```def makePictureOfFractal(f, i, e, w, g, p, W, a, b, s):```]
+    *   [i could simplify a lot of it, such as min and max, and tkinterface into just canvas.]
+6.  **Redundant** code
+Smell at `phoenix_fractal.py` [lines 162~164]
+    *   [calls canvas.pack way too much, only 1 is needed.]
+    *   [```tk_Interface_PhotoImage_canvas_pixel_object.pack()```]
+    *   [make that long variable just canvas and pack it once after the image is made]
+7.  Decision tree that is **too complex**
+Smell at `mbrot_fractal.py` [lines 232~241]
+    *   [makes the logic way too complex and hard to follow]
+    *   [```for iter in range(len):
+    z = z * z + c
+    if abs(z) > TWO:
+        ...
+    elif abs(z) < TWO:
+        continue
+    elif abs(z) > seven:
+        ...```]
+    *   [Simplify the decision structure by reducing nesting or using early returns to streamline the logic]
+8.  **Spaghetti** code
+Smell at `phoenix_fractal.py` [lines 300~315]
+    *   [many variables are created for colors when only a few are used. could just use '#000000']
+    *   [```TOMATO = '#ff6347'  # tomato (a shade of red)
+WHITE = '#ffffff'```]
+    *   [take them out and just use the color code.]
+9.  **Dead** code
+Smell at `mrbot_fractal.py` [lines 319~330]
+    *   [only the second tuple is useful]
+    *   [    ```return tuple(tupple)  # cast to 2-pel type
+    return tuple([Path(fname).stem, frac])```]
+    *   [remove the first one]
 
 
 ### Example

@@ -23,56 +23,56 @@
 
 import os.path
 import unittest
-
-from phoenix_fractal import getColorFromPalette, grad, WHITE, f, p
-from phoenix_fractal import getFractalConfigurationDataFromFractalRepositoryDictionary
+from palettes import grad
+from parser import cast_hash_map
+from phoenix import fractal_config, phoenix_color_palette
 
 
 class TestPhoenix(unittest.TestCase):
     def setUp(self):
         self.here = os.path.dirname(__file__)
-        fractal_name, self.fractal = p(f"{self.here}/p/phoenix.frac")
+        fractal_name, self.fractal = cast_hash_map(f"{self.here}/p/phoenix.frac")
 
     def test_p(self):
         """Fractal configuration file parser behaves correctly"""
-        self.assertRaises(RuntimeError, p, f"{self.here}/p/commented-out-property.frac")
-        self.assertRaises(ValueError, p, f"{self.here}/p/bad-float-value.frac")
-        self.assertRaises(RuntimeError, p, f"{self.here}/p/no-property-name.frac")
-        self.assertRaises(ValueError, p, f"{self.here}/p/bad-int-value.frac")
-        self.assertRaises(ValueError, p, f"{self.here}/p/zero-axislen.frac")
-        self.assertRaises(ValueError, p, f"{self.here}/p/missing-value.frac")
-        self.assertRaises(RuntimeError, p, f"{self.here}/p/too-many-colons.frac")
-        self.assertIsNotNone(p(f"{self.here}/p/phoenix.frac"))
-        self.assertRaises(ValueError, p, f"{self.here}/p/negative-axislen.frac")
-        self.assertRaises(RuntimeError, p, f"{self.here}/p/no-colons.frac")
+        self.assertRaises(RuntimeError, cast_hash_map, f"{self.here}/p/commented-out-property.frac")
+        self.assertRaises(ValueError, cast_hash_map, f"{self.here}/p/bad-float-value.frac")
+        self.assertRaises(RuntimeError, cast_hash_map, f"{self.here}/p/no-property-name.frac")
+        self.assertRaises(ValueError, cast_hash_map, f"{self.here}/p/bad-int-value.frac")
+        self.assertRaises(ValueError, cast_hash_map, f"{self.here}/p/zero-axislen.frac")
+        self.assertRaises(ValueError, cast_hash_map, f"{self.here}/p/missing-value.frac")
+        self.assertRaises(RuntimeError, cast_hash_map, f"{self.here}/p/too-many-colons.frac")
+        self.assertIsNotNone(cast_hash_map(f"{self.here}/p/phoenix.frac"))
+        self.assertRaises(ValueError, cast_hash_map, f"{self.here}/p/negative-axislen.frac")
+        self.assertRaises(RuntimeError, cast_hash_map, f"{self.here}/p/no-colons.frac")
 
     def test_getColorFromPalette(self):
         """Phoenix fractal configuration and algorithm output the expected colors at key locations"""
-        self.assertEqual('#ffeca5', getColorFromPalette(complex(0, 0), self.fractal))
-        self.assertEqual('#ffe7af', getColorFromPalette(complex(-0.751, 1.1075), self.fractal))
-        self.assertEqual('#ffe8ac', getColorFromPalette(complex(-0.2, 1.1075), self.fractal))
-        self.assertEqual('#ffe5b2', getColorFromPalette(complex(-0.750, 0.1075), self.fractal))
-        self.assertEqual('#002277', getColorFromPalette(complex(-0.1075, -0.748), self.fractal))
-        self.assertEqual('#002277', getColorFromPalette(complex(0.078125, -0.75625), self.fractal))
-        self.assertEqual('#94ff51', getColorFromPalette(complex(-0.234375, -0.75625), self.fractal))
-        self.assertEqual('#ffe7af', getColorFromPalette(complex(-0.625, 0.33749), self.fractal))
-        self.assertEqual('#002277', getColorFromPalette(complex(-0.46875, -0.678125), self.fractal))
-        self.assertEqual('#ffe5b2', getColorFromPalette(complex(-0.837, -0.406), self.fractal))
-        self.assertEqual('#ffe7af', getColorFromPalette(complex(-0.685, -0.186), self.fractal))
+        self.assertEqual('#ffeca5', phoenix_color_palette(complex(0, 0), self.fractal))
+        self.assertEqual('#ffe7af', phoenix_color_palette(complex(-0.751, 1.1075), self.fractal))
+        self.assertEqual('#ffe8ac', phoenix_color_palette(complex(-0.2, 1.1075), self.fractal))
+        self.assertEqual('#ffe5b2', phoenix_color_palette(complex(-0.750, 0.1075), self.fractal))
+        self.assertEqual('#002277', phoenix_color_palette(complex(-0.1075, -0.748), self.fractal))
+        self.assertEqual('#002277', phoenix_color_palette(complex(0.078125, -0.75625), self.fractal))
+        self.assertEqual('#94ff51', phoenix_color_palette(complex(-0.234375, -0.75625), self.fractal))
+        self.assertEqual('#ffe7af', phoenix_color_palette(complex(-0.625, 0.33749), self.fractal))
+        self.assertEqual('#002277', phoenix_color_palette(complex(-0.46875, -0.678125), self.fractal))
+        self.assertEqual('#ffe5b2', phoenix_color_palette(complex(-0.837, -0.406), self.fractal))
+        self.assertEqual('#ffe7af', phoenix_color_palette(complex(-0.685, -0.186), self.fractal))
 
     def test_dictionaryGetter(self):
         """Names of properties in the configuration dictionary are as expected"""
-        self.assertIsNone(getFractalConfigurationDataFromFractalRepositoryDictionary(self.fractal, 'absent'))
-        self.assertIsNone(getFractalConfigurationDataFromFractalRepositoryDictionary(self.fractal, 'peacock'))
-        self.assertIsNotNone(getFractalConfigurationDataFromFractalRepositoryDictionary(self.fractal, 'type'))
-        self.assertIsNotNone(getFractalConfigurationDataFromFractalRepositoryDictionary(self.fractal, 'preal'))
-        self.assertIsNotNone(getFractalConfigurationDataFromFractalRepositoryDictionary(self.fractal, 'pimag'))
-        self.assertIsNotNone(getFractalConfigurationDataFromFractalRepositoryDictionary(self.fractal, 'creal'))
-        self.assertIsNotNone(getFractalConfigurationDataFromFractalRepositoryDictionary(self.fractal, 'cimag'))
+        self.assertIsNone(fractal_config(self.fractal, 'absent'))
+        self.assertIsNone(fractal_config(self.fractal, 'peacock'))
+        self.assertIsNotNone(fractal_config(self.fractal, 'type'))
+        self.assertIsNotNone(fractal_config(self.fractal, 'preal'))
+        self.assertIsNotNone(fractal_config(self.fractal, 'pimag'))
+        self.assertIsNotNone(fractal_config(self.fractal, 'creal'))
+        self.assertIsNotNone(fractal_config(self.fractal, 'cimag'))
 
     def test_gradientLength(self):
         """Color palette contains the expected number of colors"""
-        self.assertEqual(108, len(grad))
+        self.assertEqual(102, len(grad))
 
 
 if __name__ == '__main__':

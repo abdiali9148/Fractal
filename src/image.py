@@ -1,9 +1,12 @@
 from tkinter import Tk, Canvas, PhotoImage, mainloop
-SIZE = 512
 from palettes import palette
 import sys
 from mandelbrot import pixel_color
 from phoenix import phoenix_color_palette
+
+SIZE = 512
+
+MAX_ITERATIONS = 115
 def mbrot_paint_fractal(fractal, window, img):
 
     half_axis = fractal['axisLen'] / 2.0

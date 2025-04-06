@@ -1,13 +1,15 @@
 from palettes import grad
+
+
 def phoenix_color_palette(z, fc):
     # c = complex(0.5667, 0.0)
     c = complex(fc['creal'], fc['cimag'])
-    # pheonix = complex(-0.5, 0.0)
-    pheonix = complex(fc['preal'], fc['pimag'])
+    # phoenix = complex(-0.5, 0.0)
+    phoenix = complex(fc['preal'], fc['pimag'])
     zPrev = 0+0j
     for i in range(102):
         zSave = z
-        z = z * z + c + (pheonix * zPrev)
+        z = z * z + c + (phoenix * zPrev)
         zPrev = zSave
         if abs(z) > 2:
             return grad[i]

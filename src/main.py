@@ -16,8 +16,6 @@ def main():
     print("Rendering {} fractal".format(name), file=sys.stderr)
     before = time.time()
     window, img = create_window_and_image()
-    # window = Tk()
-    # img = PhotoImage(width=SIZE, height=SIZE)
     if sys.argv[0] == 'src/mbrot_fractal.py':
         mbrot_paint_fractal(fractal, window, img)
     elif sys.argv[0] == 'src/phoenix_fractal.py':

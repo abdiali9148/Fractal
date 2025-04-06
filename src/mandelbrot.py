@@ -1,5 +1,6 @@
 MAX_ITERATIONS = 115
 
+
 def compute_iteration(c, escape_radius=2):
     z = 0 + 0j
     for iteration in range(MAX_ITERATIONS):

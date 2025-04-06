@@ -1,5 +1,6 @@
 from pathlib import Path
 
+
 def cast_hash_map(fname):
     """
     Parses a mandelbrot data file into a dictionary
@@ -43,4 +44,5 @@ def cast_hash_map(fname):
     elif 'axisLength' not in frac or frac['axisLength'] <= 0.0:
         raise ValueError("axisLength must be positive")
     return tuple([Path(fname).stem, frac])
+
 
