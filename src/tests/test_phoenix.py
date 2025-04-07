@@ -91,6 +91,22 @@ class TestPhoenix(unittest.TestCase):
 
         self.assertIn(return_type, grad)
 
+    def test_grad_data_type(self):
+        for color in grad:
+            self.assertIsInstance(color, str)
+
+    def test_phoenix_color_palette_format(self):
+        color = phoenix_color_palette(complex(0, 0), self.fractal)
+        self.assertIsInstance(color, str)
+        self.assertTrue(color.startswith('#'))
+        self.assertEqual(len(color), 7)
+
+    def test_phoenix_config_contains_expected_keys(self):
+        name, config = cast_hash_map(f"{self.here}/p/phoenix.frac")
+        expected_keys = {"creal", "cimag", "preal", "pimag"}
+        for key in expected_keys:
+            self.assertIn(key, config)
+
 
 if __name__ == '__main__':
     unittest.main()

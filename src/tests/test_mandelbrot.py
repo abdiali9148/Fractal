@@ -90,6 +90,12 @@ class TestMandelbrot(unittest.TestCase):
     def test_parser_file_not_found(self):
         self.assertRaises(FileNotFoundError, cast_hash_map, f"{self.here}/m/nonexistent.frac")
 
+    def test_parser_returns_nonempty_dict(self):
+        name , config = cast_hash_map(f"{self.here}/m/mandelbrot.frac")
+        self.assertTrue(bool(config))
+
+    def test_compute_iteration_origin(self):
+        self.assertEqual(compute_iteration(complex(0, 0)), MAX_ITERATIONS - 1)
 
 if __name__ == '__main__':
     unittest.main()
