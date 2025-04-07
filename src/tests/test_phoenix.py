@@ -74,6 +74,23 @@ class TestPhoenix(unittest.TestCase):
         """Color palette contains the expected number of colors"""
         self.assertEqual(102, len(grad))
 
+    def test_color_palette_return_type(self):
+        fc = {
+            'creal': 0.5667,
+            'cimag': 0.0,
+            'preal': -0.5,
+            'pimag': 0.0
+        }
+
+        z = complex(0,0)
+        return_type = phoenix_color_palette(z,fc)
+
+        self.assertIsInstance(return_type, str)
+        self.assertTrue(return_type.startswith('#'))
+        self.assertEqual(len(return_type), 7)
+
+        self.assertIn(return_type, grad)
+
 
 if __name__ == '__main__':
     unittest.main()

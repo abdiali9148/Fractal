@@ -23,7 +23,7 @@
 
 import unittest
 import os.path
-from mandelbrot import pixel_color
+from mandelbrot import pixel_color, compute_iteration
 from mbrot_fractal import *
 from palettes import palette
 from image import MAX_ITERATIONS, show_status
@@ -78,6 +78,17 @@ class TestMandelbrot(unittest.TestCase):
     def test_paletteLength(self):
         """Palette contains the expected number of colors"""
         self.assertEqual(111, len(palette))
+
+    def test_palette_data_type(self):
+        for color in palette:
+            self.assertIsInstance(color, str)
+
+    def test_count_return_type(self):
+        count = compute_iteration(complex(0,0))
+        self.assertIsInstance(count, int)
+
+    def test_parser_file_not_found(self):
+        self.assertRaises(FileNotFoundError, cast_hash_map, f"{self.here}/m/nonexistent.frac")
 
 
 if __name__ == '__main__':
